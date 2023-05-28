@@ -1,0 +1,53 @@
+﻿body {
+    background-color: black;
+    color:lightgrey;
+}
+.color1
+{
+    color:darkgrey;
+}
+.color2 
+{
+    color:lightgrey;
+}
+.center {
+    text-align: center;
+}
+h1 
+{
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    font-family:monospace;
+}
+h2 {
+    font-size: 2.5rem;
+    font-family: monospace;
+    line-height: 1.2;
+}
+.check {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom:40px;
+    
+}
+
+.seemore:hover {
+    text-decoration: underline;
+    color: orange;
+}
+.navbar1 {
+    
+    color:darkgrey;
+    
+}
+.navbar1:hover {
+    text-decoration: none;
+    color:orange;
+}
+
+
+

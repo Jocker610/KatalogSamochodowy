@@ -1,0 +1,79 @@
+﻿@page
+@model KatalogSamochodowy.Pages.ShowMoreModel
+@{
+}
+
+
+
+<table class= "text-light table table-responsive table-striped border text-center ">
+	<tbody>
+        <tr>
+            <th width="15%">
+                <label asp-for="Samochod.BrandName" for="BrandName"></label>
+            </th>
+            <th width="15%">
+                <label asp-for="Samochod.ModelName" for="BrandName"></label>
+            </th>
+            <th width="15%">
+                <label asp-for="Samochod.Segment" for="BrandName"></label>
+            </th>
+            <th width="15%">
+                <label asp-for="Samochod.BodyType" for="BrandName"></label>
+            </th>
+            <th width="15%">
+                <label asp-for="Samochod.Horsepower" for="BrandName"></label>
+            </th>
+            <th width="15%">
+                <label asp-for="Samochod.Price" for="BrandName"></label>
+            </th>
+            <th width="15%">
+                <label asp-for="Samochod.YearOfProduction" for="BrandName"></label>
+            </th>
+
+
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Samochod.BrandName" id="BrandName" class="form-label">@Model.Samochod.BrandName</label>
+            </td>
+            <td>
+                <label asp-for="Samochod.ModelName" id="BrandName" class="form-label">@Model.Samochod.ModelName</label>
+            </td>
+            <td>
+                <label asp-for="Samochod.Segment" id="BrandName" class="form-label">@Model.Samochod.Segment</label>
+            </td>
+            <td>
+                <label asp-for="Samochod.BodyType" id="BrandName" class="form-label">@Model.Samochod.BodyType</label>
+            </td>
+            <td>
+                <label asp-for="Samochod.Horsepower" id="BrandName" class="form-label">@Model.Samochod.Horsepower</label>
+            <td>
+                <label asp-for="Samochod.Price" id="BrandName" class="form-label">@Model.Samochod.Price</label>
+            </td>
+            <td>
+                <label asp-for="Samochod.YearOfProduction" id="BrandName" class="form-label">@Model.Samochod.YearOfProduction</label>
+            </td>
+            
+        </tr>
+        
+		
+	</tbody>
+</table>
+<table class= "text-light table table-responsive table-striped border text-center">
+    <tr>
+
+        <td class="col">
+            <textarea class="form-control text-white  btn-outline-secondary justify-content-around " disabled="disabled" readonly="readonly" id="Description" rows="15" asp-for="Samochod.Description">@Model.Samochod.Description</textarea>
+        </td>
+        
+        <td class="col">
+            @if (Model.Samochod.CarPhoto != null)
+            {
+                <img src="/lib/@Model.Samochod.CarPhoto" width="750" alt="Brak zdjecia" />
+            }
+        </td>
+    </tr>
+</table>
+<div class="text-end">
+    <a asp-page="/przeglad" class="btn btn-danger">Powrót</a>
+</div>

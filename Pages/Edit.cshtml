@@ -1,0 +1,134 @@
+﻿@page
+@model KatalogSamochodowy.Pages.EditModel
+@{
+}
+
+<br />
+<h2 class="text-info">Edytuj samochód w katalogu</h2>
+<br />
+
+<div class="border">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Samochod.Id"/>
+        <div class="container" style="padding:30px">
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Samochod.BrandName"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Samochod.BrandName" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Samochod.BrandName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Samochod.ModelName"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Samochod.ModelName" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Samochod.ModelName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Samochod.Segment"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Samochod.Segment" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Samochod.Segment" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Samochod.BodyType"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Samochod.BodyType" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Samochod.BodyType" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Samochod.Description"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Samochod.Description" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Samochod.Description" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Samochod.Horsepower"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Samochod.Horsepower" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Samochod.Horsepower" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Samochod.Price"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Samochod.Price" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Samochod.Price" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Samochod.YearOfProduction"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Samochod.YearOfProduction" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Samochod.YearOfProduction" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Samochod.CarPhoto"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="file" asp-for="Samochod.CarPhoto" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Samochod.CarPhoto" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <input type="submit" value="Edytuj" class="btn-primary form-control" />
+                    </div>
+                    <div class="col-sm-2">
+                        <a asp-page="Index" class="btn-success form-control">Wróć</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

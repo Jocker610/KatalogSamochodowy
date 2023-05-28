@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<head>
+    <link rel="stylesheet" href="~/css/index.css" />
+</head>
+
+<body>
+    <div class="center">
+        <h1 class="display">Witaj w katalogu samochodowym!</h1>
+
+        <div class="check">
+
+            <div>
+                <a class="seemore color1" asp-area="" asp-page="/przeglad"><h2>Przeglądaj katalog</h2></a>
+            </div>
+            <div>
+                <a class="seemore color1" asp-area="" asp-page="/AddPage"><h2>Dodaj samochód do katalogu</h2></a>
+            </div>
+
+
+
+        </div>
+        
+        
+    </div>
+    
+        
+
+</body>
+
+
+

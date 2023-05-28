@@ -1,0 +1,103 @@
+﻿@page
+@model KatalogSamochodowy.Pages.przegladModel
+@{
+}
+
+
+
+<form method="post">
+    @if (Model.Samochod.Count() > 0)
+    {
+        <br /><br />
+        
+            <table class=" text-light table table-responsive table-striped border text-center ">
+                <tr>
+                    <th width="13%">
+                        @Html.DisplayNameFor(m => m.Samochod.FirstOrDefault().BrandName)
+                    </th>
+
+                    <th width="13%" >
+                        @Html.DisplayNameFor(m => m.Samochod.FirstOrDefault().ModelName)
+                    </th>
+
+                    <th width="13%">
+                        @Html.DisplayNameFor(m => m.Samochod.FirstOrDefault().Segment)
+                    </th>
+
+                    <th width="13%">
+                        @Html.DisplayNameFor(m => m.Samochod.FirstOrDefault().BodyType)
+                    </th>
+
+                    <th width="13%">
+                        @Html.DisplayNameFor(m => m.Samochod.FirstOrDefault().Description)
+                    </th>
+
+                    <th width="13%">
+                        @Html.DisplayNameFor(m => m.Samochod.FirstOrDefault().Horsepower)
+                    </th>
+
+                    <th width="13%">
+                        @Html.DisplayNameFor(m => m.Samochod.FirstOrDefault().Price)
+                    </th>
+
+                    <th width="13%">
+                        @Html.DisplayNameFor(m => m.Samochod.FirstOrDefault().YearOfProduction)
+                    </th>
+
+                   
+                </tr>
+                    
+                @foreach (var item in Model.Samochod)
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.BrandName)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.ModelName)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Segment)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.BodyType)
+                </td>
+                <td>
+                    <a asp-page="/ShowMore" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Otwórz</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Horsepower) HP
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Price) ZŁ
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.YearOfProduction)
+                </td>
+                
+
+                <td>
+                    <button asp-page-handler="Delete" asp-route-id="@item.Id"
+                            onclick="return confirm('Jesteś pewien, że chcesz usunąć samochód z katalogu?')"
+                            class="btn btn-danger btn-sm">
+                        Usuń
+                    </button>
+                </td>
+                <td>
+                    <a asp-route-id="@item.Id" asp-page="Edit" class="btn btn-success btn-sm">Edytuj</a>
+                </td>
+            </tr>
+
+                }
+            </table>
+        
+    }
+    else
+
+    {
+        <p>
+            Brak samochodów w katalogu.
+        </p>
+    }
+
+</form>
